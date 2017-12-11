@@ -7,8 +7,8 @@ This is a repository for log analysis project written in python language.
 
 * Need to run with python 3.5.3 version.
 * Need to run with postgres 9.6 version.
-* Need psycopg2
-* Need to run agains "news" schema.
+* Need psycopg2.
+* Need to run against "news" schema.
 * Need to create below views :
   1. CREATE VIEW articles_by_views AS SELECT title, COUNT(log.id) AS views FROM articles, log
      WHERE log.path = CONCAT('/article/',slug) GROUP BY title ORDER BY views desc;
