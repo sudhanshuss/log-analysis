@@ -18,7 +18,7 @@ This is a repository for log analysis project written in python language.
   4. CREATE VIEW error_articles_view AS SELECT date(time), COUNT(*) AS errors
      FROM log WHERE status = '404 NOT FOUND' GROUP BY date(time);
   5. CREATE VIEW error_percentage AS SELECT total_articles_view.date, 
-     ((error_articles_view.errors/total_articles_view.views)*100) AS percentage
+     (100*error_articles_view.errors/total_articles_view.views) AS percentage
      FROM total_articles_view, error_articles_view WHERE total_articles_view.date = error_articles_view.date ORDER BY total_articles_view.date;
   
 
